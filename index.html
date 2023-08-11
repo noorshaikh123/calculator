@@ -14,36 +14,48 @@
 <div class="small-screen"></div>
 </div>
 <div>
-<input type="text" class="input">
+<input type="text" class="input" id="inputtext">
 <div>
 <div class="button-screen">
-<button class="button">7</button>
-<button class="button">8</button>
-<button class="button">9</button>
-<button class="button">÷</button>
-<button class="button">CLR</button>
+<button class="button" onclick="addscreen('7')">7</button>
+<button class="button" onclick="addscreen('8')">8</button>
+<button class="button" onclick="addscreen('9')">9</button>
+<button class="button" onclick="addscreen('/')">÷</button>
+<button class="button" onclick="addscreen('CLR')">CLR</button>
 </div>
 <div class="button-screen">
-<button class="button">4</button>
-<button class="button">5</button>
-<button class="button">6</button>
-<button class="button">+</button>
-<button class="button">(</button>
+<button class="button" onclick="addscreen('4')">4</button>
+<button class="button" onclick="addscreen('5')">5</button>
+<button class="button" onclick="addscreen('6')">6</button>
+<button class="button" onclick="addscreen('+')">+</button>
+<button class="button" onclick="addscreen(')')">(</button>
 </div>
 <div class="button-screen">
-<button class="button">1</button>
-<button class="button">2</button>
-<button class="button">3</button>
-<button class="button">×</button>
-<button class="button" >)</button>
+<button class="button" onclick="addscreen('1')">1</button>
+<button class="button" onclick="addscreen('2')">2</button>
+<button class="button" onclick="addscreen('3')">3</button>
+<button class="button" onclick="addscreen('*')">×</button>
+<button class="button" onclick="addscreen(')')">)</button>
 </div>
-<div class="button-screen" "extra">
-<button class="button">0</button>
-<button class="button">00</button>
-<button class="button">.</button>
-<button class="button">-</button>
-<button class="button">=</button>
+<div class="button-screen">
+<button class="button" onclick="addscreen('0')">0</button>
+<button class="button" onclick="addscreen('00')">00</button>
+<button class="button" onclick="addscreen('.')">.</button>
+<button class="button" onclick="addscreen('-')">-</button>
+<button class="button" onclick="addscreen('=')">=</button>
 </div>
 </div>
+<script>
+ function addscreen(key)
+ {
+    const element = document.getElementById('inputtext');
+    if(key=='=')
+    element.value = eval(element.value);
+    else if(key=="CLR")
+    element.value = ' ';
+    else 
+    element.value = element.value + key;
+ }    
+</script>
 </body>
 <html>
